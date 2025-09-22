@@ -1,9 +1,8 @@
 <template>
   <div class="login-page">
-    
+    <h1 class="title">智能财务</h1>
     <el-card class="box">
       <el-form @submit.prevent="handleLogin" label-width="60px">
-        <h1 class="title">智能财务</h1>
         <el-form-item label="账号">
           <el-input v-model="username" placeholder="u001 / a001" />
         </el-form-item>
@@ -65,7 +64,6 @@ function handleLogin() {
   color: #3b82f6;
   margin-bottom: 32px;
   letter-spacing: 4px;
-  text-align: center;
 }
 .box {
   width: 380px;

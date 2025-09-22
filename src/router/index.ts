@@ -1,20 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Login from '@/views/Login.vue'
-import Home from '@/views/Home.vue'
-import History from '@/views/History.vue'
-import Audit from '@/views/Audit.vue' // 管理员专用
 import { useUserStore } from '@/stores/user'
 
 const routes = [
-  { 
-    path: '/', 
-    name: 'Login', 
-    component: () => import('@/views/Login.vue'),
-    meta: { layout: 'none' } // 登录页不需要布局
-  },
+  { path: '/', name: 'Login', component: () => import('@/views/Login.vue') },
   {
     path: '/',
-    component: () => import('@/layout/Layout.vue'), // 统一使用 Layout 组件
+    component: () => import('@/layout/AppLayout.vue'),
     children: [
       { path: '/home', name: 'Home', component: () => import('@/views/Home.vue') },
       { path: '/history', name: 'History', component: () => import('@/views/History.vue') },
@@ -23,7 +14,6 @@ const routes = [
     ],
   },
 ]
-
 
 const router = createRouter({
   history: createWebHistory(),
